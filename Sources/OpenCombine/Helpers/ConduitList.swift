@@ -54,4 +54,10 @@ extension ConduitList {
     internal mutating func removeAll() {
         self = .empty
     }
+
+    internal mutating func take() -> ConduitList {
+        let taken = self
+        self.removeAll()
+        return taken
+    }
 }
